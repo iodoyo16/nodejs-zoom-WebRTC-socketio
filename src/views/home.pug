@@ -9,29 +9,13 @@ html(lang="en")
     body 
         header
             h1 Coom
-
         main
-            div#welcome 
-                h4 Open Rooms: 
-                ul
-                form
-                    input#roomname(placeholder="room name",required, type="text")
-                    
-                    input#nickname(value="Anonymous", required,type="text")
-                    button Enter Room
-            div#room
-                h3
-                ul
-                form#message
-                    input(placeholder="message", required,type="text")
-                    button Send
-            //- form#nickname
-            //-     input(type="text",placeholder="choose a nickname",required)
-            //-     button Save
-            //- ul
-            //- form#message
-            //-     input(type="text",placeholder="write a message",required)
-            //-     button Send
+            div#myStream
+                video#myFace(autoplay,playsinline,width="400",height="400")
+                button#mute Mute
+                button#camera Camera Off
+                select#cameras
+            //-playsinline은 모바일 환경에서 동영상이 전체화면이 되는것을 막아주는 property
         script(src="/socket.io/socket.io.js")
         //- socket.io는 browser에 미리 깔려있는것이 아니므로 import해준다
         script(src="/public/js/app.js")
